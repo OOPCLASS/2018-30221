@@ -12,16 +12,17 @@ public class Bus {
 		color = "RED";
 	}
 	
-	public Bus(String brand, String color) {
+	public Bus(String brand, String color, String licensePlate) {
 		this.brand = brand;
 		this.color = color;
+		this.licensePlate = licensePlate;
 	}
 	
-	public void OpenDoors() {
+	public void openDoors() {
 		System.out.println("Opening doors!");
 	}
 	
-	public void CloseDoors() {
+	public void closeDoors() {
 		System.out.println("Closing doors!");
 	}
 
@@ -60,7 +61,13 @@ public class Bus {
 	@Override
 	public String toString() {
 		return "Details: brand = " + this.brand + ", color = " + this.color
-				+ ", plates = " + this.licensePlate;
+				+ ", plates = " + this.licensePlate + "\n";
 	}
 	
+	public boolean equals(Bus bus) {
+		if(this.licensePlate == bus.getLicensePlate()) {
+			return true;
+		}
+		return false;
+	}
 }
